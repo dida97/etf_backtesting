@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}ETF Search{% endblock %}
+
+{% block content %}
+    <div class="text-center">
+        <h1 class="display-4">ETF Backtesting Platform</h1>
+        <p class="lead">Enter the ticker of an ETF to view its details and historical performance.</p>
+    </div>
+
+    <div class="card shadow-sm mt-4 mx-auto" style="max-width: 500px;">
+        <div class="card-body">
+            <form action="/search" method="POST">
+                <div class="mb-3">
+                    <label for="ticker" class="form-label">ETF Ticker</label>
+                    <input type="text" id="ticker" name="ticker" class="form-control" placeholder="Enter ETF ticker (e.g., SPY)" required>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}ETF Search Results{% endblock %}
+
+{% block content %}
+    <div class="text-center mb-4">
+        <h1 class="display-4">ETF Search Results</h1>
+        <p class="lead">Here are the details for <strong>{{ ticker }}</strong>.</p>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h5 class="card-title">ETF Name: {{ etf_name }}</h5>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Date</th>
+                    <th>Close Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for date, data in historical_prices.items() %}
+                <tr>
+                    <td>{{ date }}</td>
+                    <td>${{ "%.2f"|format(data['Close']) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="/" class="btn btn-primary">Search Another ETF</a>
+    </div>
+{% endblock %}
