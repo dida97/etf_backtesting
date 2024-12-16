@@ -15,6 +15,14 @@
                     <label for="ticker" class="form-label">ETF Ticker</label>
                     <input type="text" id="ticker" name="ticker" class="form-control" placeholder="Enter ETF ticker (e.g., SPY)" required>
                 </div>
+                <div class="mb-3">
+                    <label for="start_date" class="form-label">Start Date</label>
+                    <input type="date" id="start_date" name="start_date" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="end_date" class="form-label">End Date</label>
+                    <input type="date" id="end_date" name="end_date" class="form-control">
+                </div>
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary">Search</button>
                 </div>
@@ -22,3 +30,6 @@
         </div>
     </div>
 {% endblock %}
+
+
+
